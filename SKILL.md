@@ -208,6 +208,8 @@ Recommendations (escalating):
 
 ## Example run (real case, 2026-09-07)
 
+Full write-up: [`examples/2026-09-07-0x9F-iaLPSS2_I2C.md`](examples/2026-09-07-0x9F-iaLPSS2_I2C.md).
+
 - Event: BugCheck 1001, `0x0000009f` `(0x3, 0xffffb507a20c2360, ...)`,
   dump `090726-7843-01.dmp`.
 - `!analyze -v` → `FAILURE_BUCKET_ID: 0x9F_3_ACPI_IMAGE_pci.sys`,
