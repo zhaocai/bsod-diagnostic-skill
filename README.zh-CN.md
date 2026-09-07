@@ -2,6 +2,9 @@
 
 [English](README.md) | 简体中文
 
+> **安装：** 直接把这句话发给你的 AI —— *"请安装技能
+> https://github.com/YOUR_NAME/bsod-diagnostic-skill，装好后告诉我怎么用。"*
+
 一个用于排查 Windows 蓝屏（BSOD）的 AI Agent 技能，采用微软官方标准调试流程：
 事件查看器 → minidump → WinDbg/cdb → `!analyze -v` + 微软符号服务器，
 并把调试结果转换成大白话结论和可执行的修复建议。
@@ -35,18 +38,6 @@
     "urls": ["https://example.com/skills/"]
   }
 }
-```
-
-### 或者直接把提示词发给你的 AI
-
-把下面这段提示词发给你的 AI agent（opencode、Claude Code 等任何有文件/终端
-权限、兼容 SKILL.md 的 agent）即可：
-
-```text
-请帮我安装技能 https://github.com/YOUR_NAME/bsod-diagnostic-skill：
-把仓库克隆到临时目录，将里面的 bsod-diagnostic-skill 文件夹复制到
-~/.config/opencode/skills/（opencode）或 ~/.claude/skills/（Claude Code），
-安装完成后告诉我怎么触发使用。
 ```
 
 ### Claude Code 及其他兼容 Anthropic SKILL.md 的 agent

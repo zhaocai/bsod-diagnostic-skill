@@ -2,6 +2,10 @@
 
 English | [简体中文](README.zh-CN.md)
 
+> **Install:** just paste this to your AI agent — *"Install the skill from
+> https://github.com/YOUR_NAME/bsod-diagnostic-skill into your skills folder
+> and tell me how to use it."*
+
 An AI agent skill for diagnosing Windows blue-screen (BSOD) crashes using the
 standard Microsoft debugging workflow — Event Viewer → minidump → WinDbg/cdb →
 `!analyze -v` with the Microsoft symbol server — and turning the raw output into
@@ -38,18 +42,6 @@ Or publish it and register via URL in `opencode.json`:
     "urls": ["https://example.com/skills/"]
   }
 }
-```
-
-### Or let your AI install it
-
-Paste this prompt into your AI agent (opencode, Claude Code, or any
-SKILL.md-compatible agent with file/shell access):
-
-```text
-Please install the skill from https://github.com/YOUR_NAME/bsod-diagnostic-skill:
-clone the repo into a temp folder, copy the bsod-diagnostic-skill folder into
-~/.config/opencode/skills/ (opencode) or ~/.claude/skills/ (Claude Code),
-then tell me how to trigger it.
 ```
 
 ### Claude Code / other Anthropic-compatible agents
