@@ -85,6 +85,19 @@ Prefer the classic Windows SDK Debugging Tools first:
 - Install via "Windows SDK" → feature "Debugging Tools for Windows", or the
   Microsoft Store "WinDbg" app.
 
+If neither exists, tell the user a debugger is required and offer to install
+it. With the user's consent, auto-install the Store WinDbg via winget:
+
+```powershell
+winget install --id Microsoft.WinDbg -e --accept-package-agreements --accept-source-agreements
+```
+
+After installing, re-run detection and continue with the Store-version flow
+below. If winget is unavailable or the user declines, give them the Microsoft
+Store link (<https://apps.microsoft.com/detail/9pgj2n31m8w8c>), wait for them
+to confirm installation, then re-run detection. NEVER download debugger
+binaries from third-party mirrors.
+
 If only the Store version exists:
 
 ```powershell
