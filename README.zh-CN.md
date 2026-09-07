@@ -2,8 +2,11 @@
 
 [English](README.md) | 简体中文
 
-> **安装：** 直接把这句话发给你的 AI —— *"请安装技能
-> https://github.com/YOUR_NAME/bsod-diagnostic-skill，装好后告诉我怎么用。"*
+**安装** — 把这句话发给你的 AI：
+
+```text
+请安装技能 https://github.com/itwxb/bsod-diagnostic-skill，装好后告诉我怎么用。
+```
 
 一个用于排查 Windows 蓝屏（BSOD）的 AI Agent 技能，采用微软官方标准调试流程：
 事件查看器 → minidump → WinDbg/cdb → `!analyze -v` + 微软符号服务器，

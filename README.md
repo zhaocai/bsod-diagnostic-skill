@@ -2,9 +2,11 @@
 
 English | [简体中文](README.zh-CN.md)
 
-> **Install:** just paste this to your AI agent — *"Install the skill from
-> https://github.com/YOUR_NAME/bsod-diagnostic-skill into your skills folder
-> and tell me how to use it."*
+**Install** — paste this to your AI agent:
+
+```text
+Install the skill from https://github.com/itwxb/bsod-diagnostic-skill into your skills folder and tell me how to use it.
+```
 
 An AI agent skill for diagnosing Windows blue-screen (BSOD) crashes using the
 standard Microsoft debugging workflow — Event Viewer → minidump → WinDbg/cdb →
