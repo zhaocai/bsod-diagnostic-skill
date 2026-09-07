@@ -61,6 +61,12 @@ Just describe what happened — e.g. "I just got a blue screen, help me figure
 out why" — and the skill walks the agent through: confirming the crash time,
 analyzing the dump, and giving you a plain-language answer with fixes.
 
+If the agent doesn't trigger the skill automatically, invoke it explicitly:
+
+```text
+Use the bsod-diagnostic-skill to analyze my blue screen.
+```
+
 ## Requirements
 
 - Windows 10/11, PowerShell 5.1+ (run as Administrator)

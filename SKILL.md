@@ -58,6 +58,11 @@ Get-ChildItem C:\Windows\Minidump | Sort-Object LastWriteTime -Descending |
 Prefer the newest `.dmp` matching the crash time. Also check for a full dump:
 `C:\Windows\MEMORY.DMP`.
 
+**If a matching dump is found, IMMEDIATELY copy it to a safe working location**
+(e.g. `Copy-Item <dump> $env:TEMP\bsod\`) and analyze the copy. Storage Sense /
+WER cleanup can delete dumps from `C:\Windows\Minidump` at any time — including
+between "found it" and "analyzed it" — leaving only the path in the event log.
+
 **The folder can be EMPTY** — Windows (Storage Sense / WER cleanup) deletes old
 minidumps, and a `Get-ChildItem` may return nothing even though the folder
 exists. If empty:
@@ -184,6 +189,9 @@ Recommendations (escalating):
 3. Hardware signal only for 0x124/WHEA: suggest `mdsched` memory test, temps,
    PSU. Never claim hardware is broken from a single event.
 4. Offer to execute safe mitigations, with consent.
+5. Dump preservation: offer to exclude `C:\Windows\Minidump` from Storage
+   Sense cleanup (Settings → System → Storage → Storage sense, or via
+   `Cleanmgr` / registry), so future dumps survive long enough to analyze.
 
 ## Example run (real case, 2026-09-07)
 
