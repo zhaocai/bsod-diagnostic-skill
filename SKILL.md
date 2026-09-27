@@ -104,24 +104,14 @@ If only the Store version exists:
 Get-AppxPackage -Name '*WinDbg*' | Format-List Name, Version, InstallLocation
 ```
 
-Executables inside `C:\Program Files\WindowsApps\...` cannot be run directly
-(access denied). Workaround: copy the `amd64` folder out (recursively,
-including `winext\` and `winxp\` subfolders) to a temp dir, then run cdb.exe
-from there:
+Store WinDbg provides native execution aliases in `%LOCALAPPDATA%\Microsoft\WindowsApps\`:
+- `cdbX64.exe` (command-line debugger, run directly without elevation or copying)
+- `WinDbgX.exe` (GUI)
+
+Do **NOT** copy or dump binaries out of `WindowsApps` or use temp folders. Run the alias directly:
 
 ```powershell
-$src = "$env:ProgramFiles\WindowsApps\Microsoft.WinDbg_*_x64__*\amd64"
-$dst = "$env:TEMP\windbg"; New-Item -ItemType Directory -Force -Path $dst
-Copy-Item "$src\*" $dst -Recurse -Force
-& "$dst\cdb.exe" -version
-```
-
-Store WinDbg keeps extension DLLs (`ext.dll`, `kdexts.dll`, ...) in subfolders,
-so if `!analyze` fails with "No export analyze found" or "Unable to add
-extension DLL", fix it with `.extpath`:
-
-```
-.extpath <temp dir>\winext
+& "$env:LOCALAPPDATA\Microsoft\WindowsApps\cdbX64.exe" -version
 ```
 
 ## Step 4 - Analyze the dump
